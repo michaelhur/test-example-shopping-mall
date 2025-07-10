@@ -8,7 +8,7 @@ it('호출 시 initialValue 인자를 지정하지 않는 경우 isModalOpened �
   // result: 훅을 호출하여 얻은 결과 값은 반환
   // -> result.current 값을 참조하여 최신 상태를 추적할 수 있다.
   // rerender: 훅을 원하는 인자와 함께 새로 호출하여 상태를 갱신한다.
-  const { result, rerender } = renderHook(useConfirmModal);
+  const { result } = renderHook(useConfirmModal);
 
   expect(result.current.isModalOpened).toBe(false);
 });
