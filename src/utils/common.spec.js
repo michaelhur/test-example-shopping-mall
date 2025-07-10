@@ -52,6 +52,7 @@ describe('Debounce', () => {
   afterEach(() => {
     // 타이머 모킹도 초기화 필수!
     // 전역의 teardown에서 타이머에 의존하는 로직 -> fakeTimer로 인하여 제대로 동작하지 않을 수 있음
+    // 실제 시간을 사용하도록 초기화
     vi.useRealTimers();
   });
 
