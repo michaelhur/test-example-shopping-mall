@@ -15,6 +15,18 @@ import { pick } from '@/utils/common';
 
 const PRODUCT_PAGE_LIMIT = 20;
 
+// 실제 앱에서 사용자와 상호 작용할 로직이 포함되어 있음.
+// 1. 상품 리스트 조회 API에 맞게 제대로 렌더링 되는지
+// 2. 상품을 클릭했을때 navigate 모킹을 통해 상세화면으로 이동하는지
+// 3. 장바구니/구매 버튼을 눌렀을때 제대로 된 페이지로 이동하는지
+// 4. 상품 리스트가 더 있는 경우 show more 버튼이 노출되며, 이를 통해 데이터를 더 가져올 수 있는지
+
+// ProductList 컴포넌트에 통합테스트를 하면, ProductCard 컴포넌트의 유닛 테스트를 다 커버할 수 있음.
+// 유지보수 측면에서, 통합테스트로 한번에 검증하는게 더 효율적
+
+// 프론트엔드의 통합 테스트는...
+// 상태나 데이터를 관리하는 특정 컴포넌트를 기준으로 하위 컴포넌트가 제대로 렌더링 되는지 검증하는 테스트
+// 앱의 상태를 어디서 어떻게 관리하고 변경할지 구조적인 설계가 중요함
 const ProductList = ({ limit = PRODUCT_PAGE_LIMIT }) => {
   const navigate = useNavigate();
   const filter = useFilterStore(state =>
