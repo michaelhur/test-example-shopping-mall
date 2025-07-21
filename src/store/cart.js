@@ -45,6 +45,7 @@ export const useCartStore = create(set => ({
   cart: {},
   totalCount: 0,
   totalPrice: 0,
+  // 편의상 로컬 스토리지를 사용하여 장바구니 상품 저장.
   initCart: userId =>
     set(state => {
       if (!userId) {

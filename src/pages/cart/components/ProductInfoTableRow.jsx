@@ -12,6 +12,11 @@ import { MAX_CART_VALUE } from '@/constants';
 import { cartValidationMessages } from '@/messages';
 import { formatPrice } from '@/utils/formatter';
 
+// 상품명, 가격과 같은 정보와 삭제, 수량 변경 필드 렌더링
+// 테이블의 모든 상품을 대상으로 기능 검증이 더 효율적
+// ProductInfoTable를 대상으로 테스트하는 것이 실제 앱의 동작과 유사하게 UI 변경 검증 가능
+
+// 예를 들어 Row만 테스트하면, 수량 변경 버튼을 눌러도 props로 전달받은 changeCartItemCount 스파이 함수 호출 여부만 확인할 수 있음
 const ProductInfoTableRow = ({
   item,
   user,
