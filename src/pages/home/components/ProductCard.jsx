@@ -15,6 +15,13 @@ import { pageRoutes } from '@/apiRoutes';
 import { pathToUrl } from '@/helpers/url';
 import { formatPrice } from '@/utils/formatter';
 
+// product prop 기준으로 상품 정보 (상품명, 가격, 상품 이미지)가 잘 렌더링되는지
+// onClickAddCardButton 이 올바르게 동작하는지 <- Spy 함수 사용
+// onClickPurchaseButton 이 올바르게 동작하는지 <- Spy 함수 사용
+
+// 하지만 스파이 함수 호출 여부만 검증하기때문에, 사용자가 ProductCard를 눌렀을때 동작을 검증 불가
+// API에서 주는 데이터 기준을 올바르게 렌더링되는지도 검증 불가
+// ProductCard는 단위 테스트를 하기에 좋은 컴포넌트
 const ProductCard = ({
   product,
   onClickAddCartButton,
